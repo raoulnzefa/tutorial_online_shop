@@ -4,7 +4,9 @@
        <p>Price: {{item_data.price}} P</p>
         <div class="v-cart-item__count">
             count:
+            <span @click="decrementItem">-</span>
             <p>{{cart_item_data.count}}</p>
+            <span @click="incrementItem" >+</span>
         </div>  
         <button
             @click="deleteFromCart"
@@ -36,6 +38,12 @@
             
         },
         methods: {
+            decrementItem (){
+                this.$emit('decrementItem')
+            },
+            incrementItem (){
+                this.$emit('incrementItem')
+            },
             deleteFromCart(){
                 this.$emit('deleteFromCart')
             },
@@ -55,5 +63,8 @@
         border: #000 solid  1px;
         border-radius: 2vh;
         padding: 2vh;
+    }
+    span{
+        cursor: pointer;
     }
 </style>
