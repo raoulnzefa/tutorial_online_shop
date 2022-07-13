@@ -1,6 +1,12 @@
 <template>
     <div class="v-catalog">
-       <vCatalogItemVue
+        <router-link :to="{name: 'cart'}" >
+            <div class="v-ctalog__link_to_cart">
+                Cart: {{CART.length}}
+            </div>
+        </router-link>
+
+    <vCatalogItemVue
         v-for="product in PRODUCTS"
         :key="product.article"
         :product_data="product"
@@ -22,12 +28,13 @@
         },
         data(){
             return{
-             
+                title: 'Catalog'
             }
         },
         computed:{
             ...mapGetters([
-                'PRODUCTS'
+                'PRODUCTS',
+                'CART'
             ]),
         },
         methods: {
@@ -57,5 +64,14 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2vh;
+    }
+    .v-ctalog__link_to_cart{
+        text-decoration: underline;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: 1px solid #fafa;
+        padding: 10px;
     }
 </style>
