@@ -7,7 +7,7 @@
         </router-link>
         <p v-if="CART.length == 0">cart is empty</p>
        <vCartItemVue
-        v-for="(item, index) in CART"
+        v-for="(item, index) in cart_data"
         :key="item.article"
         :cart_item_data="item"
         @deleteFromCart ="deleteFromCart(index)"
@@ -35,6 +35,12 @@
         data(){
             return{
                title: 'Cart',
+               cart_data:{
+                type: Array,
+                    default(){
+                        return []
+                    }
+                },
             }
         },
         computed:{
@@ -53,7 +59,7 @@
         },
         watch:{},
         mounted(){
-
+            this.cart_data = this.CART
         },
 
     }

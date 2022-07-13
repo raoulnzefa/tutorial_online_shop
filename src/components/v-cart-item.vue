@@ -44,10 +44,6 @@
             
         },
         mounted(){
-
-            this.item_data =  this.cart_item_data;
-            console.log(this.cart_item_data);
-            this.item_data['count'] = 1;
         },
 
     }

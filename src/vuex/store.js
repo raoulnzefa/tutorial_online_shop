@@ -24,9 +24,11 @@ let store = createStore({
                     }
                 });
                 if (!isProductExist) {
+                    product.count = 1
                     state.cart.push(product)
                 }
             } else {
+                product.count = 1
                 state.cart.push(product)
             }
 
