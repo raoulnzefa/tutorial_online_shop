@@ -1,0 +1,28 @@
+{
+    "products": [{
+            "name": "1",
+            "price": 100,
+            "article": "'T1'"
+        },
+        {
+            "name": "'2'",
+            "price": 200,
+            "article": "'T2'"
+        },
+        {
+            "name": "'3'",
+            "price": 300,
+            "article": "'T3'"
+        },
+        {
+            "name": "'4'",
+            "price": 400,
+            "article": "'T4'"
+        },
+        {
+            "name": "'5'",
+            "price": 500,
+            "article": "'T5'"
+        }
+    ]
+}
